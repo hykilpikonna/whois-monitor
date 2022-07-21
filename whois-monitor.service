@@ -1,0 +1,13 @@
+[Unit]
+Description=Checks whois expiration
+Wants=whois-monitor.timer
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /app/whois/whois.py
+WorkingDirectory=/app/whois
+User=whois
+Group=whois
+
+[Install]
+WantedBy=multi-user.target
