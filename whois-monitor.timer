@@ -1,0 +1,10 @@
+[Unit]
+Description=Checks whois expiration timer
+Requires=whois-monitor.service
+
+[Timer]
+Unit=whois-monitor.service
+OnCalendar=*-*-* 10:00:00
+
+[Install]
+WantedBy=timers.target
